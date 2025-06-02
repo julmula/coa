@@ -1,0 +1,17 @@
+.Find the sum and average of N 16
+bit numbers. 
+
+MOV SI,0200H
+MOV CX,0005H
+MOV AX,0000H
+MOV DX,0000H
+ L1: ADD AX,[SI]
+    ADD SI,02H
+    DEC CX
+    JNZ L1
+MOV BX,0005H
+MOV DX,0000H
+DIV BX
+MOV [0300H],AX
+MOV [0302H],AL
+HLT
